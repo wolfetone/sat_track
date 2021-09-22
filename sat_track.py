@@ -4,8 +4,7 @@
 
 #Imports
 import requests
-import json
-import time 
+import time
 
 #Constants
 BASE_URL = "https://api.n2yo.com/rest/v1/satellite"
