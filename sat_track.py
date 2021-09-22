@@ -5,10 +5,12 @@
 #Imports
 import requests
 import time
-
+import os
+from dotenv import load_dotenv
+load_dotenv()
 #Constants
 BASE_URL = "https://api.n2yo.com/rest/v1/satellite"
-API_KEY = "C3LQLD-J5AEMK-UCFGQK-4RMA"
+API_KEY = os.getenv('API_Key')
 API_FUNC_TYPE = "positions"
 
 #Functions
