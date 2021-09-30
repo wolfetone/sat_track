@@ -62,6 +62,6 @@ def iss_track(observer_latitude:float, observer_longitude:float, observer_altitu
 
 count = True
 while count:
-    print("Current azimuth of the ISS: " + str(iss_track(38.971204, -122.858986, 428.81, 'azimuth')) + " degrees.")
-    print("Current elevation of the ISS: " + str(iss_track(38.971204, -122.858986, 428.81, 'elevation')) + " degrees.\n") 
+    print("Current azimuth of the ISS: " + str(iss_track(45.971204, -132.858986, 428.81, 'azimuth')) + " degrees.")
+    print("Current elevation of the ISS: " + str(iss_track(45.971204, -132.858986, 428.81, 'elevation')) + " degrees.\n") 
     time.sleep(7.5)
