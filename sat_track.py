@@ -14,10 +14,11 @@ API_KEY = os.getenv('API_Key')
 API_FUNC_TYPE = "positions"
 
 #Functions
-def iss_track(observer_latitude:float, observer_longitude:float, observer_altitude:float, data_type:str):
+def track_satellite(satellite_id:int, observer_latitude:float, observer_longitude:float, observer_altitude:float, data_type:str):
     """
-    Return tracking information for the ISS. 
+    Return tracking information for a satellite. 
     Positional arguments:
+        satellite_id: the identification number of the satellite.
         observer_latitude: the latitude (in decimal degrees) of the observer's current position. 
         observer_longitude: the longitude (in decimal degrees) of the observer's current position. 
         observer_altitude: the altitude (in meters) above sea level of the observer's current position. 
@@ -29,8 +30,6 @@ def iss_track(observer_latitude:float, observer_longitude:float, observer_altitu
             ra
             dec
     """
-
-    satellite_id = "25544"
     position_predictions = "1"
 
     endpoint_url = f"{BASE_URL}/{API_FUNC_TYPE}/{satellite_id}/{observer_latitude}/{observer_longitude}/{observer_altitude}/{position_predictions}/&apiKey={API_KEY}"
@@ -55,13 +54,13 @@ def iss_track(observer_latitude:float, observer_longitude:float, observer_altitu
     # Satellite declination in degrees 
     if data_type == 'dec':
         return api_request['positions'][0]['dec']
-
+def search_id():
 
 
 
 
 count = True
 while count:
-    print("Current azimuth of the ISS: " + str(iss_track(45.971204, -132.858986, 428.81, 'azimuth')) + " degrees.")
-    print("Current elevation of the ISS: " + str(iss_track(45.971204, -132.858986, 428.81, 'elevation')) + " degrees.\n") 
+    print("Current azimuth of the ISS: " + str(track_satellite(25544, 45.971204, -132.858986, 428.81, 'azimuth')) + " degrees.")
+    print("Current elevation of the ISS: " + str(track_satellite(25544, 45.971204, -132.858986, 428.81, 'elevation')) + " degrees.\n") 
     time.sleep(7.5)
