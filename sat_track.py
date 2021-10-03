@@ -54,11 +54,12 @@ def track_satellite(satellite_id:int, observer_latitude:float, observer_longitud
     # Satellite declination in degrees 
     if data_type == 'dec':
         return api_request['positions'][0]['dec']
-        
+
 def search_id():
+    pass
 
-
-
+def user_menu():
+    pass
 
 count = True
 while count:
